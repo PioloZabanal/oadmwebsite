@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TikTok Profile - Cristine Joy Pielago</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial; }
+
+body {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.profile {
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.top-bar button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Profile header */
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #eee;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.username {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.handle {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+.stat {
+  text-align: center;
+}
+.stat-num {
+  font-weight: bold;
+  font-size: 18px;
+}
+.stat-label {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Buttons */
+.btn-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.btn {
+  padding: 8px 25px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+.btn-follow {
+  background: #fe2c55;
+  color: white;
+}
+.btn-follow.active {
+  background: #e5e5e5;
+  color: #333;
+}
+.btn-msg {
+  background: #e5e5e5;
+  color: #333;
+}
+.btn-msg:hover,.btn-follow:hover {
+  opacity: 0.8;
+}
+
+/* Bio */
+.bio {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5px;
+}
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px 5px;
+  cursor: pointer;
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+}
+.tab.active {
+  color: #000;
+  border-bottom: 2px solid #fe2c55;
+}
+
+/* Content sections */
+.content {
+  display: none;
+  min-height: 300px;
+  padding: 15px;
+  text-align: center;
+}
+.content.active {
+  display: block;
+}
+
+/* Video grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+}
+.video {
+  aspect-ratio: 9/16;
+  background: #ddd;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.views {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.link-btn {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 10px 20px;
+  background: #fe2c55;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.link-btn:hover {
+  opacity: 0.9;
+}
+a{
+  text-decoration:none;/*Removes the underline*/
+  colpr:inherit; /*Removes the blue color*/
+}
+</style>
+</head>
+<body>
+<div class="profile">
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <button onclick="alert('Back clicked')">←</button>
+    <button onclick="alert('Options opened')">⋯</button>
+  </div>
+
+  <!-- Profile header -->
+  <div class="profile-header">
+    <img src="Imagep2.jpg" alt="Profile" class="profile-pic">
+    <div class="username">@kxstine</div>
+    <div class="handle">Cristine Joy Pielago</div>
+  </div>
+
+  <!-- Stats - CLICKABLE -->
+  <div class="stats">
+    <a href="#" class="stat" onclick="alert('Following: Piolo Zabanal')">
+      <div class="stat-num">1</div>
+      <div class="stat-label">Following</div>
+    </a>
+    <a href="#" class="stat" onclick="alert('Followers list opened')">
+      <div class="stat-num">2.4K</div>
+      <div class="stat-label">Followers</div>
+    </a>
+    <a href="#" class="stat" onclick="alert('Liked videos opened')">
+      <div class="stat-num">56.7K</div>
+      <div class="stat-label">Likes</div>
+    </a>
+  </div>
+
+  <!-- Buttons - Message is clickable -->
+  <div class="btn-row">
+    <button class="btn btn-follow" id="followBtn" onclick="toggleFollow()">Follow</button>
+    <a href="#" class="btn btn-msg" onclick="alert('Message dialog opened')">Message</a>
+  </div>
+
+  <!-- Bio -->
+  <div class="bio">
+    FLOWERS DONT BEG FOR ATTENTION
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab(0, this)">Videos</div>
+    <div class="tab" onclick="switchTab(1, this)">About Me</div>
+    <div class="tab" onclick="switchTab(2, this)">Educational Background</div>
+    <div class="tab" onclick="switchTab(3, this)">Resume</div>
+    <div class="tab" onclick="switchTab(4, this)">Photo Gallery</div>
+  </div>
+
+<!-- Tab Content -->
+<!-- 1. Videos - LINK ONLY -->
+  <div class="content">
+    <a href="Videocristine.html" target="_blank" class="link-btn">Open Video</a>
+  </div>
+
+  <!-- 2. About Me - LINK ONLY -->
+  <div class="content">
+    <a href="Aboutcristine.html" target="_blank" class="link-btn">Open About Me</a>
+  </div>
+
+  <!-- 3. Educational Background - LINK ONLY -->
+  <div class="content">
+    <a href="Educationalcristine.html" target="_blank" class="link-btn">Open Educational Background</a>
+  </div>
+
+  <!-- 4. Resume - LINK ONLY -->
+  <div class="content">
+    <a href="Resumecristine.html" target="_blank" class="link-btn">Open Resume</a>
+  </div>
+
+  <!-- 5. Photo Gallery - LINK ONLY -->
+  <div class="content">
+    <a href="Photogallerycristine.html" target="_blank" class="link-btn">Open Photo Galerry</a>
+  </div>
+    <p style="color:#888; margin-top:40px;">No videos uploaded yet.<br>Check back soon! 🎥</p>
+  </div>
+
+</div>
+
+<script>
+function switchTab(index, element) {
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(tab => tab.classList.remove('active'));
+  element.classList.add('active');
+
+  const contents = document.querySelectorAll('.content');
+  contents.forEach(content => content.classList.remove('active'));
+  contents[index].classList.add('active');
+}
+
+function toggleFollow() {
+  const followBtn = document.getElementById('followBtn');
+  followBtn.classList.toggle('active');
+  followBtn.innerText = followBtn.classList.contains('active') ? 'Following' : 'Follow';
+}
+</script>
+
+</body>
+</html>

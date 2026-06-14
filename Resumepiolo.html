@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Piolo D. Zabanal - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        body {
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+        .resume {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            background-color: #1a2b4a;
+            color: white;
+            padding: 30px 25px;
+        }
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: white;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .section-title {
+            font-size: 19px;
+            font-weight: bold;
+            margin: 28px 0 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+        }
+        .info-row {
+            display: flex;
+            margin: 8px 0;
+            font-size: 15px;
+        }
+        .info-label {
+            min-width: 70px;
+            font-weight: 500;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .languages-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+        /* Main Content */
+        .main {
+            padding: 35px 30px;
+            color: #222;
+        }
+        .header-name {
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .header-title {
+            font-size: 18px;
+            color: #555;
+            margin: 6px 0 15px;
+        }
+        .contact {
+            margin-bottom: 30px;
+            font-size: 16px;
+            color: #444;
+        }
+        .contact p {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .main-section {
+            margin-bottom: 28px;
+        }
+        .main-section h3 {
+            font-size: 20px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: #1a2b4a;
+        }
+        .edu-item, .exp-item {
+            margin: 14px 0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .edu-level {
+            font-weight: bold;
+            display: inline-block;
+            min-width: 90px;
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 700px) {
+            .resume {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="profile-photo">
+                <!-- Replace with your photo: <img src="resumeprofile.jpg" alt="Profile" width="160" height="160" style="object-fit:cover;"> -->
+                    <img src="Image10ppp.jpg" alt="Profile" width="160" height="220" style="object-fit:cover;"> -->
+            </div>
+
+            <h3 class="section-title">PERSONAL INFORMATION</h3>
+            <div class="info-row">
+                <span class="info-label">Age:</span>
+                <span>21 years old</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Birthdate:</span>
+                <span>April 15, 2005</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Height:</span>
+                <span>5'7"</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Weight:</span>
+                <span>64</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Nationality:</span>
+                <span>Filipino</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Birth Place:</span>
+                <span>Manigun, Culasi, Antique</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Civil Status:</span>
+                <span>Single</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Religion:</span>
+                <span>Catholic</span>
+            </div>
+
+            <h3 class="section-title">Sclass="section-title">SKILLS</h3>
+            <ul>
+                <li>Strong verbal and written communication skills</li>
+                <li>Efficient at handling administrative challenges</li>
+                <li>Confident in professional and group settings</li>
+                <li>Knowledge of basic operating systems like Microsoft Word, Excel, PowerPoint and Access</li>
+            </ul>
+
+            <h3 class="section-title">LANGUAGES</h3>
+            <div class="languages-grid">
+                <span>English</span>
+                <span>Filipino</span>
+                <span>Karay-a</span>
+                <span>Hiligaynon</span>
+            </div>
+
+            <h3 class="section-title">ACHIEVEMENTS</h3>
+            <ul>
+                <li>Civil Service Professional Exam Passer<br>
+                <small>Civil Service Commission: August 2026</small></li>
+                <li>Cum Laude<br>
+                <small>University of Antique - Main Campus<br>2024 - 2028</small></li>
+                <li>TESDA NC II Holder (Computer Services)<br>
+                <small>TESDA Antique Provincial Office 2026</small></li>
+                <li>Outstanding Student Intern<br>
+                <small>University of Antique - Main Campus 2028</small></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main">
+            <h1 class="header-name">PIOLO D. ZABANAL</h1>
+            <p class="header-title">Administrative Assistant II</p>
+            
+            <div class="contact">
+                <p>📞 09368468739</p>
+                <p>✉️ piolozabanal5@gmail.com</p>
+            </div>
+
+            <div class="main-section">
+                <h3>CAREER OBJECTIVE</h3>
+                <p style="line-height:1.7; font-size:16px;">
+                    Proactive Office Administration graduate seeking to launch a professional career as an Administrative Assistant II. Committed to utilizing certified computer skills, multilingual communication, and a strong work ethic to contribute effectively to organizational growth.
+                </p>
+            </div>
+
+            <div class="main-section">
+                <h3>EDUCATIONAL BACKGROUND</h3>
+                <div class="edu-item">
+                    <span class="edu-level">GRADUATE</span>
+                    Master of Business Administration - 9 Units<br>
+                    University of Antique - Main Campus<br>
+                    District 1, Sibalom, Antique<br>
+                    2029 - Present
+                </div>
+                <div class="edu-item">
+                    <span class="edu-level">TERTIARY</span>
+                    Bachelor of Science in Office Administration<br>
+                    University of Antique - Main Campus<br>
+                    District 1, Sibalom, Antique<br>
+                    2024 - 2028
+                </div>
+                <div class="edu-item">
+                    <span class="edu-level">SECONDARY</span>
+                    Humanities and Social Sciences (HUMSS)<br>
+                    Northern Antique Vocational School<br>
+                    Poblacion, Culasi, Antique<br>
+                    2018 - 2024
+                </div>
+                <div class="edu-item">
+                    <span class="edu-level">PRIMARY</span>
+                    Manigun Elementary School<br>
+                    Manigun, Culasi, Antique<br>
+                    2012 - 2018
+                </div>
+            </div>
+
+            <div class="main-section">
+                <h3>PRE-PROFESSIONAL EXPERIENCE</h3>
+                <div class="exp-item">
+                    <strong>600-hour On-the-Job Training (OJT 1 and 2)</strong><br>
+                    University of Antique - Main Campus (OJT 1)<br>
+                    District 1, Sibalom, Antique<br>
+                    Antique Provincial Capitol (OJT 2)<br>
+                    San Jose, Antique
+                </div>
+                <div class="exp-item">
+                    <strong>80-hour Work Immersion (2nd Semester)</strong><br>
+                    Northern Antique Vocational School<br>
+                    Poblacion, Culasi, Antique
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

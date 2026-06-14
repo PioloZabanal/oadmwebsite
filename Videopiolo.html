@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Video Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+
+        .gallery-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fe2c55;
+        }
+
+        /* Video Grid Layout */
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        .video-card {
+            background: #000;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 9/16;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 8px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            font-size: 12px;
+        }
+
+        .views {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Fullscreen view when clicked */
+        .fullscreen-view {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .fullscreen-view.active {
+            display: flex;
+        }
+
+        .fullscreen-video {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery-container">
+        <h2>🎥 My Video Gallery</h2>
+
+        <div class="video-grid">
+            <!-- Video 1 -->
+            <div class="video-card" onclick="openFullscreen('video1.mp4', 'Video 1', '12.3K views')">
+<video width="640" height="360" controls>
+  <source src="Video1.mp4" type="video/mp4">
+  <source src="Video1.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+                <div class="video-info">
+                    <div class="views">▶ 12.3K</div>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card" onclick="openFullscreen('video2.mp4', 'Video 2', '8.7K views')">
+<video width="640" height="360" controls>
+  <source src="Video4.mp4" type="video/mp4">
+  <source src="Video4.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+                <div class="video-info">
+                    <div class="views">▶ 8.7K</div>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-card" onclick="openFullscreen('video4.mp4', 'Video 4', '5.4K views')">
+<video width="640" height="360" controls>
+  <source src="Video5.mp4" type="video/mp4">
+  <source src="Video5.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+                <div class="video-info">
+                    <div class="views">▶ 5.4K</div>
+                </div>
+            </div>
+    <!-- Fullscreen Video Player -->
+    <div class="fullscreen-view" id="fullscreenView">
+        <span class="close-btn" onclick="closeFullscreen()">&times;</span>
+        <video class="fullscreen-video" id="fullscreenVideo" controls autoplay>
+            <source src="" type="video/mp4">
+        </video>
+    </div>
+
+    <script>
+        function openFullscreen(videoSrc, title, views) {
+            const video = document.getElementById('fullscreenVideo');
+            video.querySelector('source').src = videoSrc;
+            video.load();
+            document.getElementById('fullscreenView').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFullscreen() {
+            const view = document.getElementById('fullscreenView');
+            const video = document.getElementById('fullscreenVideo');
+            view.classList.remove('active');
+            video.pause();
+            video.currentTime = 0;
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close when clicking outside video
+        document.getElementById('fullscreenView').addEventListener('click', function(e) {
+            if (e.target === this) closeFullscreen();
+        });
+    </script>
+
+</body>
+</html>
